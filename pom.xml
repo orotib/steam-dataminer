@@ -23,8 +23,8 @@
 	</scm>
 	<licenses>
 		<license>
-			<name>apache_v2</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<name>GNU GENERAL PUBLIC LICENSE, Version 3</name>
+			<url>http://www.gnu.org/licenses/gpl-3.0.html</url>
 		</license>
 	</licenses>
 	<description>A Steam Piac elemeit vizsgáló program.</description>
