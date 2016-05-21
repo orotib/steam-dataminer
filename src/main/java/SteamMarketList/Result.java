@@ -57,7 +57,7 @@ public class Result {
 	/**
 	 * Beállítja a valutaértékeket tartalmazó listát.
 	 * 
-	 * @param  currencies a valutaértékeket tartalmazó lista
+	 * @param currencies a valutaértékeket tartalmazó lista
 	 */
 	public void setCurrencies(List<String> currencies) {
 		this.currencies = currencies;

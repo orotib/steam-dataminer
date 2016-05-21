@@ -77,6 +77,7 @@ public class SteamMarketList {
 	 *            a vizsgálandó link
 	 * @return Result az ajánlatokat tároló osztály
 	 * @throws IOException ha bármi történne adatkérés alatt
+	 * @see <a href="http://steamcommunity.com/market/listings/730/AWP%20%7C%20Elite%20Build%20(Battle-Scarred)">Egy példalink</a>
 	 */
 	public Result getInfoFromLink(String link) throws IOException {
 		List<String> ids = new ArrayList<String>();
