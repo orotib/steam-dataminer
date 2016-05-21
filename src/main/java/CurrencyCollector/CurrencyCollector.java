@@ -30,13 +30,11 @@ import Controller.Controller;
  */
 public class CurrencyCollector {
 
-	/*
+	/**
 	 * Az első futtatás után a valuták értékeit tartalmazó fájl elérési
 	 * útvonala.
 	 */
 	public static final String valutes = Controller.homedir + "/valutes.data";
-	// private static Logger logger =
-	// LoggerFactory.getLogger(CurrencyCollector.class);
 
 	/**
 	 * A {@code filename} paraméterül kapott fájlból kiolvassa a valutaértékeket
@@ -45,6 +43,10 @@ public class CurrencyCollector {
 	 * @param filename
 	 *            a link
 	 * @return valutaértékeket tartalmazó szöveg
+	 * @throws FileNotFoundException
+	 *             ha nem létezik a paraméterül kapott fájl
+	 * @throws IOException
+	 *             ha bármi probléma történne beolvasás során
 	 */
 	@SuppressWarnings("resource")
 	protected String getDownloadLink(String filename) throws FileNotFoundException, IOException {
@@ -59,6 +61,10 @@ public class CurrencyCollector {
 	 *            a pénznemek azonosítóit és értékeit tartalmazó fájl elérési
 	 *            útvonala
 	 * @return pénznemek azonosítóit és értékeit tartalmazó {@code Map}
+	 * @throws UnknownHostException
+	 *             ha nincs internetkapcsolat
+	 * @throws IOException
+	 *             ha bármi probléma történne beolvasás során
 	 */
 	public Map<String, Double> getCurrencyMap(String filename) throws UnknownHostException, IOException {
 		Map<String, Double> curMap = new HashMap<String, Double>();
@@ -83,6 +89,14 @@ public class CurrencyCollector {
 	 * @param filename
 	 *            a fájl neve
 	 * @return az írás sikerességét jelzi
+	 * @throws UnknownHostException
+	 *             ha nincs internetkapcsolat
+	 * @throws FileNotFoundException
+	 *             ha nem létezik a paraméterül kapott fájl
+	 * @throws UnsupportedEncodingException
+	 *             ha nem támogatott a fájl kódolása
+	 * @throws IOException
+	 *             ha bármi probléma történne beolvasás során
 	 */
 	public boolean currencyToFile(String filename)
 			throws UnknownHostException, FileNotFoundException, UnsupportedEncodingException, IOException {

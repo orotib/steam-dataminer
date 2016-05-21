@@ -5,15 +5,19 @@
 	<bannerLeft>
 		<name>Left Banner</name>
 		<src>images/cat.jpg</src>
-		<href>http://www.w1.inf.unideb.hu/</href>
+		<href>https://github.com/orotib/steam-dataminer</href>
 	</bannerLeft>
 	<body>
 		<links>
+			<item name="Oracle" href="http://www.oracle.com/index.html"/>
 			<item name="The Apache Software Foundation" href="http://www.apache.org"/>
 			<item name="Apache Maven" href="http://maven.apache.org/"/>
 		</links>
-		<menu name="Examples">
-			<item name="Markdown Example" href="markdown-example.html"/>
+		<menu name="Github">
+			<item name="Steam Dataminer" href="https://github.com/orotib/steam-dataminer" />
+		</menu>
+		<menu name="README">
+			<item name="README" href="markdown-example.html"/>
 		</menu>
 		<menu ref="reports"/>
 	</body>

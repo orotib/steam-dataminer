@@ -33,8 +33,8 @@ public class SteamMarketList {
 	 * @param filename
 	 *            a linkeket tartalmazó fájl neve
 	 * @return linkek listája
-	 * @throws FileNotFoundException 
-	 * @throws IOException
+	 * @throws FileNotFoundException ha nem létezne a paraméterül kapott fájl
+	 * @throws IOException ha bármi történne a beolvasás során
 	 */
 	public List<String> getMarketLinks(String filename) throws FileNotFoundException, IOException {
 		List<String> tmp = new ArrayList<String>();
@@ -76,7 +76,7 @@ public class SteamMarketList {
 	 * @param link
 	 *            a vizsgálandó link
 	 * @return Result az ajánlatokat tároló osztály
-	 * @throws IOException
+	 * @throws IOException ha bármi történne adatkérés alatt
 	 */
 	public Result getInfoFromLink(String link) throws IOException {
 		List<String> ids = new ArrayList<String>();
@@ -109,6 +109,8 @@ public class SteamMarketList {
 	 * @param filename
 	 *            a valuták azonosítóit és értékeit tároló fájl elérési útvonala
 	 * @return pénznemek azonosítóit és értékeit tároló {@code Map}
+	 * @throws FileNotFoundException ha nem létezne a paraméterül kapott fájl
+	 * @throws IOException ha bármi történne a beolvasás alatt
 	 */
 	public Map<String, Double> getValutes(String filename) throws FileNotFoundException, IOException {
 		Map<String, Double> currencies = new HashMap<String, Double>();
