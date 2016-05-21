@@ -24,8 +24,8 @@ import Controller.Controller;
 /**
  * Valutaárfolyamok kezelését megvalósító osztály.
  * 
- * A {@link #valutes} statikus konstans a valutákat fogja tartalmazni az első
- * futtatás után.
+ * A {@link #valutes} statikus konstans a valutákat tartalmazó fájl elérési
+ * útvonalát tartalmazza.
  * 
  */
 public class CurrencyCollector {
@@ -37,11 +37,11 @@ public class CurrencyCollector {
 	public static final String valutes = Controller.homedir + "/valutes.data";
 
 	/**
-	 * A {@code filename} paraméterül kapott fájlból kiolvassa a valutaértékeket
-	 * tartalmazó linket.
+	 * A {@code filename} paraméterül kapott fájlból kiolvassa a valutaérték
+	 * letöltő linkjét.
 	 * 
 	 * @param filename
-	 *            a link
+	 *            a linket tartalmazó fájl elérési útvonala
 	 * @return valutaértékeket tartalmazó szöveg
 	 * @throws FileNotFoundException
 	 *             ha nem létezik a paraméterül kapott fájl
@@ -49,18 +49,18 @@ public class CurrencyCollector {
 	 *             ha bármi probléma történne beolvasás során
 	 */
 	@SuppressWarnings("resource")
-	protected String getDownloadLink(String filename) throws FileNotFoundException, IOException {
+	protected String getCurrencyDownloadLink(String filename) throws FileNotFoundException, IOException {
 		return new BufferedReader(new FileReader(filename)).readLine();
 	}
 
 	/**
-	 * A pénznemek azonosítóit és értékeit tartalmazó {@code Map}-et adja
+	 * A pénznemek azonosítóit és értékeit tartalmazó {@link Map}-et adja
 	 * vissza.
 	 * 
 	 * @param filename
 	 *            a pénznemek azonosítóit és értékeit tartalmazó fájl elérési
 	 *            útvonala
-	 * @return pénznemek azonosítóit és értékeit tartalmazó {@code Map}
+	 * @return pénznemek azonosítóit és értékeit tartalmazó {@link Map}
 	 * @throws UnknownHostException
 	 *             ha nincs internetkapcsolat
 	 * @throws IOException
@@ -69,7 +69,7 @@ public class CurrencyCollector {
 	public Map<String, Double> getCurrencyMap(String filename) throws UnknownHostException, IOException {
 		Map<String, Double> curMap = new HashMap<String, Double>();
 
-		String newJson = IOUtils.toString(new URL(getDownloadLink(Controller.homedir + "/" + filename)));
+		String newJson = IOUtils.toString(new URL(getCurrencyDownloadLink(Controller.homedir + "/" + filename)));
 		JsonElement element = new Gson().fromJson(newJson, JsonElement.class);
 		JsonObject object = (JsonObject) element.getAsJsonObject().get("quotes");
 
@@ -87,7 +87,7 @@ public class CurrencyCollector {
 	 * kapott fájlba.
 	 * 
 	 * @param filename
-	 *            a fájl neve
+	 *            a fájl elérési útvonala
 	 * @return az írás sikerességét jelzi
 	 * @throws UnknownHostException
 	 *             ha nincs internetkapcsolat

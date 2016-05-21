@@ -23,7 +23,7 @@ public class SteamMarketList {
 
 	private static Logger logger = LoggerFactory.getLogger(SteamMarketList.class);
 	/**
-	 * A pénznemek azonosítóit és értékeit tároló {@code Map}.
+	 * A pénznemek azonosítóit és értékeit tároló {@link Map}.
 	 */
 	private Map<String, Double> currencies;
 
@@ -31,10 +31,12 @@ public class SteamMarketList {
 	 * Beolvassa a fájlból a vizsgálandó linkeket.
 	 * 
 	 * @param filename
-	 *            a linkeket tartalmazó fájl neve
+	 *            a linkeket tartalmazó fájl elérési útvonala
 	 * @return linkek listája
-	 * @throws FileNotFoundException ha nem létezne a paraméterül kapott fájl
-	 * @throws IOException ha bármi történne a beolvasás során
+	 * @throws FileNotFoundException
+	 *             ha nem létezne a paraméterül kapott fájl
+	 * @throws IOException
+	 *             ha bármi történne a beolvasás során
 	 */
 	public List<String> getMarketLinks(String filename) throws FileNotFoundException, IOException {
 		List<String> tmp = new ArrayList<String>();
@@ -52,9 +54,9 @@ public class SteamMarketList {
 	}
 
 	/**
-	 * Visszaadja a pénznemek azonosítóit és értékeit tároló {@code Map}-jét.
+	 * Visszaadja a pénznemek azonosítóit és értékeit tároló {@link Map}-jét.
 	 * 
-	 * @return a pénznemek azonosítóit és értékeit tároló {@code Map}
+	 * @return a pénznemek azonosítóit és értékeit tároló {@link Map}
 	 */
 	public Map<String, Double> getCurrencies() {
 		return currencies;
@@ -75,9 +77,12 @@ public class SteamMarketList {
 	 * 
 	 * @param link
 	 *            a vizsgálandó link
-	 * @return Result az ajánlatokat tároló osztály
-	 * @throws IOException ha bármi történne adatkérés alatt
-	 * @see <a href="http://steamcommunity.com/market/listings/730/AWP%20%7C%20Elite%20Build%20(Battle-Scarred)">Egy példalink</a>
+	 * @return {@link Result} az ajánlatokat tároló osztály
+	 * @throws IOException
+	 *             ha bármi történne adatkérés alatt
+	 * @see <a href=
+	 *      "http://steamcommunity.com/market/listings/730/AWP%20%7C%20Elite%20Build%20(Battle-Scarred)">
+	 *      Egy példalink</a>
 	 */
 	public Result getInfoFromLink(String link) throws IOException {
 		List<String> ids = new ArrayList<String>();
@@ -109,9 +114,11 @@ public class SteamMarketList {
 	 * 
 	 * @param filename
 	 *            a valuták azonosítóit és értékeit tároló fájl elérési útvonala
-	 * @return pénznemek azonosítóit és értékeit tároló {@code Map}
-	 * @throws FileNotFoundException ha nem létezne a paraméterül kapott fájl
-	 * @throws IOException ha bármi történne a beolvasás alatt
+	 * @return pénznemek azonosítóit és értékeit tároló {@link Map}
+	 * @throws FileNotFoundException
+	 *             ha nem létezne a paraméterül kapott fájl
+	 * @throws IOException
+	 *             ha bármi történne a beolvasás alatt
 	 */
 	public Map<String, Double> getValutes(String filename) throws FileNotFoundException, IOException {
 		Map<String, Double> currencies = new HashMap<String, Double>();

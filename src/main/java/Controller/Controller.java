@@ -57,8 +57,8 @@ public class Controller {
 		DecimalFormat df = new DecimalFormat(".00");
 		double percent = value2 / value1 * 100;
 		StringBuilder sb = new StringBuilder();
-		sb.append(k).append(": ").append(df.format(percent)).append("% ").append(df.format(value1)).append("€ ")
-				.append(df.format(value2)).append("€").append(" ").append(getLinkToReadable(link));
+		sb.append(k).append(": ").append(df.format(percent)).append("% ").append(df.format(value1)).append(" ")
+				.append(df.format(value2)).append(" ").append(getLinkToReadable(link));
 		return sb.toString();
 	}
 
@@ -71,7 +71,7 @@ public class Controller {
 	 * @param sec
 	 *            a várakozás hossza másodpercben
 	 * @param note
-	 *            a logolás jelző változó
+	 *            a naplózást jelző változó
 	 * @return a várakozás sikerességét adja vissza
 	 */
 	protected boolean waitSeconds(int sec, boolean note) {

@@ -18,7 +18,7 @@ public class ControllerTest {
 
 	@Test
 	public void testPrintDataToScreen() {
-		assertEquals("1: 106,67% 1,50€ 1,60€ DesertEagle|Corinthian|Field-Tested", co.dataToScreen(1, 1.5, 1.6,
+		assertEquals("1: 106,67% 1,50 1,60 DesertEagle|Corinthian|Field-Tested", co.dataToScreen(1, 1.5, 1.6,
 				"http://steamcommunity.com/market/listings/730/Desert%20Eagle%20%7C%20Corinthian%20%28Field-Tested%29"));
 
 	}
