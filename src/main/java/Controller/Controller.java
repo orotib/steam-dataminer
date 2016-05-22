@@ -81,7 +81,7 @@ public class Controller {
 				if (note && i % 10 == 0)
 					logger.trace(String.valueOf(i) + "s");
 			} catch (InterruptedException e) {
-				logger.trace("Várakozás megszakítva!");
+				logger.debug("Várakozás megszakítva!");
 				return false;
 			}
 		}
