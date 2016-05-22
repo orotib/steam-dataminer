@@ -4,21 +4,24 @@
 	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.4.0 http://maven.apache.org/xsd/decoration-1.4.0.xsd">
 	<bannerLeft>
 		<name>Left Banner</name>
-		<src>images/cat.jpg</src>
+		<src>images/logo.png</src>
 		<href>https://github.com/orotib/steam-dataminer</href>
 	</bannerLeft>
 	<body>
 		<links>
-			<item name="Oracle" href="http://www.oracle.com/index.html"/>
-			<item name="The Apache Software Foundation" href="http://www.apache.org"/>
-			<item name="Apache Maven" href="http://maven.apache.org/"/>
+			<item name="Oracle" href="http://www.oracle.com/index.html" />
+			<item name="The Apache Software Foundation" href="http://www.apache.org" />
+			<item name="Apache Maven" href="http://maven.apache.org/" />
 		</links>
 		<menu name="Github">
 			<item name="Steam Dataminer" href="https://github.com/orotib/steam-dataminer" />
 		</menu>
-		<menu name="README">
-			<item name="README" href="markdown-example.html"/>
+		<menu name="Steam">
+			<item name="Steam Piac" href="http://steamcommunity.com/market/" />
 		</menu>
-		<menu ref="reports"/>
+		<menu name="README">
+			<item name="README" href="markdown-example.html" />
+		</menu>
+		<menu ref="reports" />
 	</body>
 </project>
