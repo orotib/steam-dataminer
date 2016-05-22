@@ -157,7 +157,7 @@ public class SteamMarketList {
 		case "2005":
 			return Double.parseDouble(price.split(" ")[0].replace(",", ".")) / currencies.get("RUB");
 		case "2006":
-			logger.debug("Unkown Currency ID - ", id);
+			logger.debug("Unkown Currency ID - {}", id);
 			return 2006.0;
 		case "2007":
 			return Double.parseDouble(price.split(" ")[1].replace(",", "")) / currencies.get("BRL") / 100;
@@ -177,21 +177,21 @@ public class SteamMarketList {
 		case "2014":
 			return Double.parseDouble(price.replace("฿", "").replace(",", "")) / currencies.get("THB");
 		case "2015":
-			logger.debug("Unkown Currency ID - ", id);
+			logger.debug("Unkown Currency ID - {}", id);
 			return 2015.0;
 		case "2016":
 			return Double.parseDouble(price.replace("₩", "").replace(",", "")) / currencies.get("KRW");
 		case "2017":
 			return Double.parseDouble(price.split(" ")[0].replace(",", ".")) / currencies.get("TRY");
 		case "2018":
-			logger.debug("Unkown Currency ID - ", id);
+			logger.debug("Unkown Currency ID - {}", id);
 			return 2018.0;
 		case "2019":
 			return Double.parseDouble(price.replace("Mex$ ", "").replace(",", "")) / currencies.get("MXN");
 		case "2020":
 			return Double.parseDouble(price.split(" ")[1].replace(",", ".")) / currencies.get("CAD");
 		case "2021":
-			logger.debug("Unkown Currency ID - ", id);
+			logger.debug("Unkown Currency ID - {}", id);
 			return 2021.0;
 		case "2022":
 			return Double.parseDouble(price.replace("NZ$ ", "")) / currencies.get("NZD");
